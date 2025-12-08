@@ -62,7 +62,7 @@ const Downloads = () => {
         </div>
       </div>
       <div className="info-box">
-        <h3>Ckeditor Config File and Style for Email Template Managment</h3>
+        <h3>Ckeditor Config File and Style for Email Template Management</h3>
       </div>
       <br></br>
       <div className="download-cards">
