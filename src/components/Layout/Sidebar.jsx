@@ -19,6 +19,14 @@ const Sidebar = () => {
           <Download size={20} />
           <span>Downloads</span>
         </NavLink>
+        <NavLink to="/editorPage" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
+          <Download size={20} />
+          <span>CKEditor Demo</span>
+        </NavLink>
+        <NavLink to="/previewPage" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
+          <Download size={20} />
+          <span>Preview CK Page</span>
+        </NavLink>
       </nav>
     </aside>
   );

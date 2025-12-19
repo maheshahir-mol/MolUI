@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
 import {
   ClassicEditor,
   AccessibilityHelp,
@@ -56,12 +55,72 @@ import {
   Undo,
 } from "ckeditor5";
 import "ckeditor5/ckeditor5.css";
-import "./CKEditorComponent.scss";
+import "./CKEditorPagemenment.scss";
 import axios from "axios";
-import { APIURL } from "../../services/axiosServices/ApiEndPoints";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+// import { APIURL } from "../../services/axiosServices/ApiEndPoints";
 
-const UPLOAD_ENDPOINT = `${APIURL}Common/CKEditorImageUpload`;
-//
+// const UPLOAD_ENDPOINT = `${APIURL}Common/CKEditorImageUpload`;
+function hslToHex(h, s, l) {
+  s /= 100;
+  l /= 100;
+
+  const k = (n) => (n + h / 30) % 12;
+  const a = s * Math.min(l, 1 - l);
+  const f = (n) =>
+    l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+
+  return (
+    "#" +
+    [f(0), f(8), f(4)]
+      .map((x) =>
+        Math.round(255 * x)
+          .toString(16)
+          .padStart(2, "0")
+      )
+      .join("")
+  );
+}
+
+function normalizeColor(value) {
+  if (!value) return value;
+
+  // hsl(...)
+  if (value.startsWith("hsl")) {
+    const [h, s, l] = value.match(/[\d.]+/g).map(Number);
+    return hslToHex(h, s, l);
+  }
+
+  // rgb / rgba
+  if (value.startsWith("rgb")) {
+    const [r, g, b] = value.match(/[\d.]+/g).map(Number);
+    return (
+      "#" +
+      [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, "0")).join("")
+    );
+  }
+
+  return value; // already hex
+}
+
+function forceHexColorPlugin(editor) {
+  const commandNames = ["fontColor", "fontBackgroundColor"];
+
+  commandNames.forEach((name) => {
+    const command = editor.commands.get(name);
+    if (!command) return;
+
+    const originalExecute = command.execute.bind(command);
+
+    command.execute = (options = {}) => {
+      if (options.value) {
+        options.value = normalizeColor(options.value);
+      }
+      return originalExecute(options);
+    };
+  });
+}
+
 function CKClassicEditor({ handleChange, ...props }) {
   const editorContainerRef = useRef(null);
   const editorRef = useRef(null);
@@ -73,7 +132,8 @@ function CKClassicEditor({ handleChange, ...props }) {
   }, []);
 
   const editorConfig = {
-    extraPlugins: [uploadPlugin, autoHeightImagePlugin],
+    extraPlugins: [uploadPlugin, autoHeightImagePlugin, forceHexColorPlugin],
+    licenseKey: "GPL",
     toolbar: {
       items: [
         "undo",
@@ -87,20 +147,15 @@ function CKClassicEditor({ handleChange, ...props }) {
         "underline",
         "bulletedList",
         "numberedList",
-        // "fontSize",
         "fontColor",
         "fontBackgroundColor",
         "strikethrough",
         "fontFamily",
         "|",
         "imageInsert",
-        // 'mediaEmbed',
-        // "insertTable",
         "insertTable",
         "superscript",
-        // 'specialCharacters',
         "link",
-        // 'codeBlock',
         "|",
         "alignment",
         "sourceEditing",
@@ -174,6 +229,31 @@ function CKClassicEditor({ handleChange, ...props }) {
       "bulletedList",
       "numberedList",
     ],
+    fontColor: {
+      colors: [
+        { color: "#000000", label: "Black" },
+        { color: "#FFFFFF", label: "White" },
+        { color: "#FF0000", label: "Red" },
+        { color: "#00FF00", label: "Green" },
+        { color: "#0000FF", label: "Blue" },
+        { color: "#FFA500", label: "Orange" },
+        { color: "#808080", label: "Gray" },
+      ],
+      columns: 5,
+      documentColors: 0, // 🚫 disables browser RGBA colors
+    },
+
+    fontBackgroundColor: {
+      colors: [
+        { color: "#FFFFFF", label: "White" },
+        { color: "#FFF4CC", label: "Light Yellow" },
+        { color: "#CCE5FF", label: "Light Blue" },
+        { color: "#D4EDDA", label: "Light Green" },
+        { color: "#F8D7DA", label: "Light Red" },
+      ],
+      columns: 5,
+      documentColors: 0, // 🚫 disables RGBA
+    },
     heading: {
       options: [
         {
@@ -223,14 +303,18 @@ function CKClassicEditor({ handleChange, ...props }) {
     image: {
       resizeUnit: "px",
       resizeOptions: [
-        { name: "resizeImage:original", label: "Actual image size", value: null },
+        {
+          name: "resizeImage:original",
+          label: "Actual image size",
+          value: null,
+        },
         // { name: "resizeImage:50", label: "50%", value: "50%" },
         // { name: "resizeImage:75", label: "75%", value: "75%" },
         {
           name: "resizeImage:custom",
           label: "Custom size",
           value: "custom",
-        }
+        },
       ],
       toolbar: [
         "toggleImageCaption",
@@ -294,7 +378,7 @@ function CKClassicEditor({ handleChange, ...props }) {
   };
 
   const editorConfigForEmail = {
-    extraPlugins: [uploadPlugin, autoHeightImagePlugin],
+    extraPlugins: [uploadPlugin, autoHeightImagePlugin, forceHexColorPlugin],
     toolbar: {
       items: [
         "undo",
@@ -308,20 +392,15 @@ function CKClassicEditor({ handleChange, ...props }) {
         "underline",
         "bulletedList",
         "numberedList",
-        // "fontSize",
         "fontColor",
         "fontBackgroundColor",
         "strikethrough",
         "fontFamily",
         "|",
         "imageInsert",
-        // 'mediaEmbed',
-        // "insertTable",
         "insertTable",
         "superscript",
-        // 'specialCharacters',
         "link",
-        // 'codeBlock',
         "|",
         "alignment",
         "sourceEditing",
@@ -443,14 +522,18 @@ function CKClassicEditor({ handleChange, ...props }) {
     image: {
       resizeUnit: "px",
       resizeOptions: [
-        { name: "resizeImage:original", label: "Actual image size", value: null },
+        {
+          name: "resizeImage:original",
+          label: "Actual image size",
+          value: null,
+        },
         // { name: "resizeImage:50", label: "50%", value: "50%" },
         // { name: "resizeImage:75", label: "75%", value: "75%" },
         {
           name: "resizeImage:custom",
           label: "Custom size",
           value: "custom",
-        }
+        },
       ],
       toolbar: [
         "toggleImageCaption",
@@ -461,9 +544,7 @@ function CKClassicEditor({ handleChange, ...props }) {
         "imageStyle:breakText",
         "|",
         "resizeImage",
-        
       ],
-   
     },
     contentStyles: [
       // Your default content styles + image styling
@@ -565,12 +646,7 @@ function CKClassicEditor({ handleChange, ...props }) {
     };
   }
   return (
-    
-    <div
-      className="ck-edotor-data-common-page-manage"
-
-      ref={editorContainerRef}
-    >
+    <div className="stylekit-for-ckeditor" ref={editorContainerRef}>
       <div ref={editorRef}>
         {isLayoutReady && (
           <CKEditor

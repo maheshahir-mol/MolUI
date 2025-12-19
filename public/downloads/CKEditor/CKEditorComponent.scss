@@ -79,37 +79,50 @@
       padding: 15px 10px;
     }
   }
-  h1 {
-    font-size: 32px !important;
+  // --------------- Project Specific Styles ----------------//
 
-    span {
-      font-size: 32px !important;
-    }
+  h1 {
+    font-size: 30px;
+    font-family: "Fjalla One";
+    letter-spacing: 0.8px;
+    font-weight: 500;
+    text-transform: uppercase;
   }
   h2 {
-    font-size: 28.8px !important;
-    span {
-      font-size: 28.8px !important;
-    }
+    font-size: 22px;
+    font-family: "Poppins400";
   }
   h3 {
-    font-size: 25.6px !important;
-    span {
-      font-size: 25.6px !important;
-    }
+    font-size: 20px;
+    font-family: "Poppins400";
   }
   h4 {
-    font-size: 22.4px !important;
-    span {
-      font-size: 22.4px !important;
-    }
+    font-size: 18px;
+    font-family: "Poppins400";
   }
+
+  h5 {
+    font-size: 16px;
+    font-family: "Poppins400";
+  }
+
+  h6 {
+    font-size: 16px;
+    font-family: "Poppins700";
+  }
+
+  .media {
+    overflow: visible !important;
+  }
+
   p {
-    font-size: 16px !important;
+    font-size: 16px;
     margin: 8px 0;
-    span {
-      font-size: 16px !important;
-      margin: 8px 0;
+    font-weight: 400;
+    font-family: "Poppins400" !important;
+
+    img {
+      display: unset;
     }
   }
   img {
