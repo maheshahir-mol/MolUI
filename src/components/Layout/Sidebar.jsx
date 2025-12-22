@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home, BookOpen, Download } from 'lucide-react';
+import { Home, BookOpen, Download, Airplay, SendHorizontal } from 'lucide-react';
 import './Sidebar.scss';
 
 const Sidebar = () => {
@@ -20,15 +20,11 @@ const Sidebar = () => {
           <span>Downloads</span>
         </NavLink>
         <NavLink to="/editorPage" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
-          <Download size={20} />
+          <Airplay size={20} />
           <span>CKEditor Demo</span>
         </NavLink>
-        <NavLink to="/previewPage" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
-          <Download size={20} />
-          <span>Preview CK Page</span>
-        </NavLink>
         <NavLink to="/sendEmailTemplate" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
-          <Download size={20} />
+          <SendHorizontal size={20} />
           <span>Send Email Template</span>
         </NavLink>
       </nav>

@@ -1,0 +1,87 @@
+.downloads-page {
+  max-width: 100%;
+}
+.downloads-page h1 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+.downloads-page .subtitle {
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+.downloads-page .download-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.downloads-page .download-cards .download-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.downloads-page .download-cards .download-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.downloads-page .download-cards .download-card .card-icon {
+  color: #3498db;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.downloads-page .download-cards .download-card h3 {
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+.downloads-page .download-cards .download-card p {
+  color: #7f8c8d;
+  margin: 0 0 1.5rem 0;
+}
+.downloads-page .download-cards .download-card .download-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.downloads-page .download-cards .download-card .download-btn:hover {
+  background: #2980b9;
+}
+.downloads-page .download-cards .download-card .download-btn:active {
+  transform: scale(0.98);
+}
+.downloads-page .info-box {
+  background: #e8f4f8;
+  border-left: 4px solid #3498db;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+.downloads-page .info-box h3 {
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+.downloads-page .info-box p {
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+}
+.downloads-page .info-box p a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+.downloads-page .info-box p a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=Downloads.css.map */

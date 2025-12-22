@@ -25,7 +25,7 @@ const EditorPage = () => {
         <div className="stylekit-for-ckeditor">
           <CKClassicEditor data={editorData} onChange={handleEditorChange} />
         </div>
-        <button onClick={handlePreview}>Preview</button>
+        <button className="btn" onClick={handlePreview}>Preview</button>
       </div>
     </div>
   );

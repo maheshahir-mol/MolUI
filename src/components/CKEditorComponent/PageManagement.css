@@ -1,0 +1,130 @@
+.ck-edotor-data-common-page-manage {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400 !important;
+  /* -------------------------- */
+}
+.ck-edotor-data-common-page-manage a {
+  color: #00f !important;
+  text-decoration: underline !important;
+}
+.ck-edotor-data-common-page-manage .image {
+  margin: 0.9em auto;
+}
+.ck-edotor-data-common-page-manage h1 {
+  font-size: 32px;
+  font-weight: 400;
+}
+.ck-edotor-data-common-page-manage h2 {
+  font-size: 28.8px;
+  font-weight: 400;
+}
+.ck-edotor-data-common-page-manage h3 {
+  font-size: 25.6px;
+  font-weight: 400;
+}
+.ck-edotor-data-common-page-manage h4 {
+  font-size: 22.4px;
+  font-weight: 400;
+}
+.ck-edotor-data-common-page-manage p {
+  font-size: 16px;
+  margin: 8px 0;
+  font-weight: 400;
+}
+.ck-edotor-data-common-page-manage img {
+  max-width: 100%;
+}
+.ck-edotor-data-common-page-manage .image-style-align-left {
+  float: left !important;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+.ck-edotor-data-common-page-manage .image-style-align-right {
+  float: right !important;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+.ck-edotor-data-common-page-manage .image-style-block-align-left {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  clear: both;
+}
+.ck-edotor-data-common-page-manage .image-style-block-align-right {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+  clear: both;
+}
+@media (max-width: 768px) {
+  .ck-edotor-data-common-page-manage .table table {
+    -webkit-overflow-scrolling: touch;
+    display: block !important;
+    width: -moz-max-content !important;
+    width: max-content !important;
+    max-width: 1200px !important;
+  }
+  .ck-edotor-data-common-page-manage .table table tbody td {
+    width: -moz-max-content !important;
+    width: max-content !important;
+  }
+  .ck-edotor-data-common-page-manage .table thead,
+  .ck-edotor-data-common-page-manage .table tbody,
+  .ck-edotor-data-common-page-manage .table tr {
+    width: 100%;
+    table-layout: auto;
+  }
+}
+.ck-edotor-data-common-page-manage .table + * {
+  clear: both;
+}
+.ck-edotor-data-common-page-manage blockquote {
+  overflow: hidden;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  border-left: solid 5px hsl(0, 0%, 80%);
+}
+.ck-edotor-data-common-page-manage .table {
+  margin: 0.9em auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+@media (max-width: 1200px) {
+  .ck-edotor-data-common-page-manage .table {
+    width: unset !important;
+  }
+}
+.ck-edotor-data-common-page-manage .table img {
+  max-width: unset;
+  width: 100%;
+}
+.ck-edotor-data-common-page-manage .table table {
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+  max-width: revert;
+  margin-bottom: 0;
+}
+.ck-edotor-data-common-page-manage .table thead tr th {
+  padding: 6.4px !important;
+  background: hsla(0, 0%, 0%, 0.05);
+  border-width: 1px !important;
+}
+.ck-edotor-data-common-page-manage .table tbody tr td {
+  padding: 6.4px !important;
+  border-width: 1px !important;
+}
+.ck-edotor-data-common-page-manage .table img {
+  max-width: 250px;
+  max-height: -moz-fit-content !important;
+  max-height: fit-content !important;
+}
+.ck-edotor-data-common-page-manage img {
+  max-height: -moz-fit-content !important;
+  max-height: fit-content !important;
+  max-width: 100% !important;
+}/*# sourceMappingURL=PageManagement.css.map */

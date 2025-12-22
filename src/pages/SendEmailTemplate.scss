@@ -1,0 +1,32 @@
+.email-tester-wrapper {
+  .email-tester-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+
+    .email-tester-field {
+      .input-label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+      input {
+        width: 100%;
+        min-height: 30px;
+        padding: 5px;
+      }
+      &:last-child {
+        grid-column: span 2;
+      }
+    }
+  }
+  .editor-wrapper {
+    margin-top: 5px;
+  }
+}
+.heading-part {
+  h4 {
+    font-size: 24px;
+  }
+}
