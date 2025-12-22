@@ -5,6 +5,7 @@ import Documentation from './pages/Documentation';
 import Downloads from './pages/Downloads';
 import EditorPage from './pages/EditorPage';
 import PreviewPage from './pages/PreviewPage';
+import SendEmailTemplate from './pages/SendEmailTemplate.jsx'
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="downloads" element={<Downloads />} />
           <Route path="editorPage" element={<EditorPage />} />
           <Route path="previewPage" element={<PreviewPage />} />
+          <Route path="sendEmailTemplate" element={<SendEmailTemplate />} />
         </Route>
       </Routes>
     </Router>

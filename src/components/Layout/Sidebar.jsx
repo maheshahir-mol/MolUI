@@ -27,6 +27,10 @@ const Sidebar = () => {
           <Download size={20} />
           <span>Preview CK Page</span>
         </NavLink>
+        <NavLink to="/sendEmailTemplate" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
+          <Download size={20} />
+          <span>Send Email Template</span>
+        </NavLink>
       </nav>
     </aside>
   );

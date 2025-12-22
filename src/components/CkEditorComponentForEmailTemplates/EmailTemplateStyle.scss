@@ -1,0 +1,67 @@
+body:has(.ckeditor-style-for-emailtemplate){
+  color: #000;
+}
+
+.ckeditor-style-for-emailtemplate {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+
+    a, p, h1, h2, h3, h4, h5, h6, p {
+      margin: revert !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      text-decoration: inherit !important;
+    }
+  
+    .ck-content {
+      line-height: 1.6;
+      word-break: break-word;
+    }
+  
+    .ck-content .table {
+      display: block !important;
+    }
+  
+    .ck-editor.ck-rounded-corners {
+      height: 100%;
+    }
+  
+    .ck.ck-editor__main a,
+    .ck-link_selected .ck-editor__main a {
+      color: #0000ff !important;
+      background: transparent !important;
+      text-decoration: underline !important;
+    }
+  
+    .ck.ck-editor__main ul,
+    .ck-editor__main ul {
+      list-style: disc;
+      padding: 0 0 0 20px;
+    }
+  
+    .ck.ck-editor__main ol,
+    .ck-editor__main ol {
+      list-style: auto;
+      list-style-type: decimal;
+      padding: 0 0 0 20px;
+    }
+    .ck-editor__main p img {
+      display: unset;
+    }
+    .ck-editor.ck-rounded-corners .ck-editor__editable_inline {
+      min-height: 450px !important;
+    }
+    .ck-heading_heading1 .ck-button__label {
+      font-size: 16px !important;
+    }
+    .ck-heading_heading2 .ck-button__label {
+      font-size: 16px !important;
+    }
+    .ck-heading_heading3 .ck-button__label {
+      font-size: 16px !important;
+    }
+    .ck-heading_heading4 .ck-button__label {
+      font-size: 16px !important;
+    }
+}
