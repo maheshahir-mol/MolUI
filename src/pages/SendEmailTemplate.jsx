@@ -124,7 +124,7 @@ const SendEmailTemplate = () => {
             <h2 className="input-label">Template Description</h2>
 
             <div className="editor-wrapper">
-              <div className="stylekit-for-ckeditor">
+              <div className="">
                 <CKEditorForEmailTemplate
                   data={emailTemplateDetails.description}
                   onChange={setVideoDescription}

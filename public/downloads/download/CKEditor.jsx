@@ -3,16 +3,17 @@ import PropTypes from "prop-types";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { ClassicEditor } from "ckeditor5";
 import "ckeditor5/ckeditor5.css";
-import "./CkEditor.scss";
-import TooltipComponent from "../../tooltip/TooltipComponent";
-import { editorConfig } from "./CkEditorConfig";
+import "./EmailTemplateStyle.scss";
+// import TooltipComponent from "../../tooltip/TooltipComponent";
+import { editorConfig } from "./CKEditorConfig.js";
 
-const CKEditorComponent = ({
+const CKEditorForEmailTemplate = ({
   data,
   isdisable,
   placeholder,
   onCKEditorChange,
   inputInfoConfig,
+  onChange,
   ...editorProps
 }) => {
   const [editorData, setEditorData] = useState(data || "<div></div>"); // Initialize with empty div or provided data
@@ -44,34 +45,30 @@ const CKEditorComponent = ({
               // Cleaned HTML
               const cleanHTML = tempDiv.innerHTML;
 
-              // Replace the pasted data
               data.content = editor.data.processor.toView(cleanHTML);
             }
           });
         }}
         onChange={(event, editor) => {
-          const newData = editor.getData();
-          if (newData !== editorData) {
-            setEditorData(newData);
-            onCKEditorChange(newData, editor);
-          }
-        }}
+          const html = editor.getData();       
+          onChange?.(html);           
+      }}
         config={editorConfig}
         disabled={isdisable}
         {...editorProps}
       />
 
-      {inputInfoConfig?.isInfoIcon && (
+      {/* {inputInfoConfig?.isInfoIcon && (
         <TooltipComponent
           iconName={inputInfoConfig?.iconName}
           message={inputInfoConfig?.message}
         />
-      )}
+      )} */}
     </div>
   );
 };
 
-CKEditorComponent.propTypes = {
+CKEditorForEmailTemplate.propTypes = {
   data: PropTypes.string,
   isdisable: PropTypes.bool,
   onCKEditorChange: PropTypes.func.isRequired,
@@ -88,10 +85,10 @@ CKEditorComponent.propTypes = {
   }),
 };
 
-CKEditorComponent.defaultProps = {
+CKEditorForEmailTemplate.defaultProps = {
   data: "",
   isdisable: false,
   editorProps: {},
 };
 
-export default CKEditorComponent;
+export default CKEditorForEmailTemplate;

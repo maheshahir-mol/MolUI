@@ -5,13 +5,16 @@ import {
     AutoLink,
     Autoformat,
     Autosave,
+    // BlockQuote,
     Bold,
     CloudServices,
     Code,
+    // CodeBlock,
     Essentials,
     FontBackgroundColor,
     FontColor,
     FontFamily,
+    // FontSize,
     GeneralHtmlSupport,
     Heading,
     ImageBlock,
@@ -30,21 +33,31 @@ import {
     LinkImage,
     ShowBlocks,
     List,
+    // MediaEmbed,
     Paragraph,
     PasteFromOffice,
     SelectAll,
     SourceEditing,
+    // SpecialCharacters,
     Strikethrough,
     Style,
     Superscript,
+    // Table,
+    // TableCaption,
+    // TableCellProperties,
+    // TableColumnResize,
+    // TableProperties,
+    // TableToolbar,
+    // TextPartLanguage,
     TextTransformation,
     Underline,
     Undo,
   } from "ckeditor5";
-  import { API_URL } from "../../../../../utils/API/fetchBaseQuery";
+  // import { APIURL } from "../../services/axiosServices/ApiEndPoints";
   
   
   export const editorConfig = {
+    licenseKey: "GPL",
     extraPlugins: [uploadPlugin, autoHeightImagePlugin],
     toolbar: {
       items: [
@@ -304,7 +317,7 @@ import {
       const formData = new FormData();
       formData.append("file", file);
   
-      const response = await fetch(`${API_URL}/Common/CKEditorImageUpload`, {
+      const response = await fetch(`${APIURL}Common/CKEditorImageUpload`, {
         method: "POST",
         body: formData,
       });

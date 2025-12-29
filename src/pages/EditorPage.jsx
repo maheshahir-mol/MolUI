@@ -1,7 +1,7 @@
 import { useState } from "react";
-import CKClassicEditor from "../../public/downloads/CKEditor/CKEditorComponent";
 import "./EditorPage.scss";
 import { useNavigate } from "react-router-dom";
+import CKClassicEditor from "../../public/downloads/CKEditor/CKEditorComponent";
 
 const EditorPage = () => {
   const [editorData, setEditorData] = useState("");

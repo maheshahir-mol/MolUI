@@ -5,7 +5,7 @@ import "./Downloads.scss";
 const Downloads = () => {
   const handleDownload = (filename) => {
     const link = document.createElement("a");
-    link.href = `/downloads/CKEditor/${filename}`;
+    link.href = `/downloads/download/${filename}`;
     link.download = filename;
     document.body.appendChild(link);
     link.click();
@@ -24,11 +24,11 @@ const Downloads = () => {
           <div className="card-icon">
             <FileDown size={48} />
           </div>
-          <h3>CKEditorComponent.js</h3>
+          <h3>PageManagementEditor.js</h3>
           <p>The main React component file</p>
           <button
             className="download-btn"
-            onClick={() => handleDownload("CKEditorComponent.js")}
+            onClick={() => handleDownload("CKEditorComponent.jsx")}
           >
             Download JS File
           </button>
@@ -38,7 +38,7 @@ const Downloads = () => {
           <div className="card-icon">
             <FileDown size={48} />
           </div>
-          <h3>CKEditorComponent.scss</h3>
+          <h3>PageManagementEditor.scss</h3>
           <p>The stylesheet for the component</p>
           <button
             className="download-btn"
@@ -51,7 +51,7 @@ const Downloads = () => {
           <div className="card-icon">
             <FileDown size={48} />
           </div>
-          <h3>PageManagement.scss</h3>
+          <h3>PageManagementFrontend.scss</h3>
           <p>The stylesheet for the component</p>
           <button
             className="download-btn"
@@ -74,12 +74,11 @@ const Downloads = () => {
           <p>The main Ckeditor component file for Email Template Management</p>
           <button
             className="download-btn"
-            onClick={() => handleDownload("CKEditor.js")}
+            onClick={() => handleDownload("CKEditor.jsx")}
           >
             Download JS File
           </button>
         </div>
-
         <div className="download-card">
           <div className="card-icon">
             <FileDown size={48} />
@@ -96,8 +95,24 @@ const Downloads = () => {
             Download JS File
           </button>
         </div>
-
         <div className="download-card">
+          <div className="card-icon">
+            <FileDown size={48} />
+          </div>
+          <h3>CKEditorForMail.scss</h3>
+          <p>
+            The main Ckeditor component Config file for Email Template
+            Management
+          </p>
+          <button
+            className="download-btn"
+            onClick={() => handleDownloadEmailEditor("EmailTemplateStyle.scss")}
+          >
+            Download SCSS File
+          </button>
+        </div>
+
+        {/* <div className="download-card">
           <div className="card-icon">
             <FileDown size={48} />
           </div>
@@ -109,7 +124,7 @@ const Downloads = () => {
           >
             Download SCSS File
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className="info-box">

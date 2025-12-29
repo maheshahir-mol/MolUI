@@ -12,17 +12,6 @@
   font-size: 16px;
   font-weight: unset;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 0 !important;
-    margin-bottom: 0.5rem !important;
-    line-height: 1.2 !important;
-  }
-
   .ck-content {
     line-height: 1.6;
     word-break: break-word;
@@ -79,6 +68,7 @@
       padding: 15px 10px;
     }
   }
+  /* -------------------------- */
   h1 {
     font-size: 32px !important;
 
@@ -112,16 +102,17 @@
       margin: 8px 0;
     }
   }
+  /* -------------------------- */
   img {
     max-width: 100%;
   }
   .image-style-align-left {
-    margin-right: 30px !important;
+    margin-right: 10px !important;
     margin-top: 0px;
     margin-bottom: 0px !important;
   }
   .image-style-align-right {
-    margin-left: 30px !important;
+    margin-left: 10px !important;
     margin-top: 0px;
     margin-bottom: 0px;
   }

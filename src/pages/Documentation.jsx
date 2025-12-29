@@ -25,16 +25,18 @@ const Documentation = () => {
         </div>
 
         <div className="step">
-          <h3>Step 2: Download Component Files</h3>
+          <h3>
+            Step 2: Download Component Files of CKEditor for PageManagement
+          </h3>
           <p>
             Go to the <a href="/downloads">Downloads</a> page and download both:
           </p>
           <ul>
             <li>
-              <code>CKEditorComponent.js</code>
+              <code>PageManagementEditor.js</code>
             </li>
             <li>
-              <code>CKEditorComponent.scss</code>
+              <code>PageManagementEditor.scss</code>
             </li>
           </ul>
         </div>
@@ -44,8 +46,8 @@ const Documentation = () => {
           <p>Create a folder in your project and copy the downloaded files:</p>
           <pre>
             <code>
-              src/components/CKEditorComponent/ ├── CKEditorComponent.js └──
-              CKEditorComponent.scss
+              src/components/CKEditorComponent/ ├── PageManagementEditor.js └──
+              PageManagementEditor.scss
             </code>
           </pre>
         </div>
@@ -110,6 +112,66 @@ const Documentation = () => {
             Run your project and compare the web output with the admin panel
             preview to ensure both match.
           </p>
+        </div>
+      </section>
+
+      <section className="doc-section">
+        <h2>Installation Editor for Email Template</h2>
+        <p>
+          Follow these steps to integrate the CKEditor component into your
+          project for Email template:
+        </p>
+
+        <div className="step">
+          <h3>Step 1: Install Dependencies</h3>
+          <p>First, install the required CKEditor packages in your project:</p>
+          <pre>
+            <code>
+              npm install @ckeditor/ckeditor5-react
+              @ckeditor/ckeditor5-build-classic
+            </code>
+          </pre>
+        </div>
+
+        <div className="step">
+          <h3>Step 2: Download Component Files of CKEditor</h3>
+          <p>
+            Go to the <a href="/downloads">Downloads</a> page and download both:
+          </p>
+          <ul>
+            <li>
+              <code>CKEditorForMail.js</code>
+            </li>
+            <li>
+              <code>CKEditorForMail.scss</code>
+            </li>
+          </ul>
+        </div>
+
+        <div className="step">
+          <h3>Step 3: Copy Files to Your Project</h3>
+          <p>Create a folder in your project and copy the downloaded files:</p>
+          <pre>
+            <code>
+              src/components/CKEditorComponent/ ├── CKEditorForMail.js └──
+              CKEditorForMail.scss
+            </code>
+          </pre>
+        </div>
+
+        <div className="step">
+          <h3>Step 4: Import and Use</h3>
+          <p>Import the component in your React file:</p>
+          <pre>
+            <code>
+              import CKEditorForMail from
+              './components/CKEditorForMail/CKEditorForMail';
+            </code>
+          </pre>
+          <p>Then use it in your JSX:</p>
+          <pre>
+            <code>&lt;CKEditorForMail /&gt;</code>
+          </pre>
         </div>
       </section>
 
