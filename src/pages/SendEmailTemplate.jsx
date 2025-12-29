@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import CKEditorForEmailTemplate from "../components/CkEditorComponentForEmailTemplates/CKEditor.jsx";
 import "./SendEmailTemplate.scss"
+import "../../public/styles/EmailTemplate.scss"
 
 const SendEmailTemplate = () => {
   const [isLoading, setIsLoading] = useState(false);
