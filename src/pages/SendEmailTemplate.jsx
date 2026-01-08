@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 
 import CKEditorForEmailTemplate from "../components/CkEditorComponentForEmailTemplates/CKEditor.jsx";
-import "./SendEmailTemplate.scss"
-import "../../public/styles/EmailTemplate.scss"
+import "./SendEmailTemplate.scss";
+import "../../public/downloads/download/EmailTemplateStyle.scss";
 
 const SendEmailTemplate = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -141,10 +141,7 @@ const SendEmailTemplate = () => {
           </button>
 
           {isLoading ? null : (
-            <button
-              className="btn"
-              onClick={callTestEmailTemplates}
-            >
+            <button className="btn" onClick={callTestEmailTemplates}>
               Send Email
             </button>
           )}

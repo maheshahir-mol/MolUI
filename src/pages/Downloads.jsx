@@ -106,7 +106,7 @@ const Downloads = () => {
           </p>
           <button
             className="download-btn"
-            onClick={() => handleDownloadEmailEditor("EmailTemplateStyle.scss")}
+            onClick={() => handleDownload("EmailTemplateStyle.scss")}
           >
             Download SCSS File
           </button>

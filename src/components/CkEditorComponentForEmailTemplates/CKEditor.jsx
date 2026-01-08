@@ -50,9 +50,9 @@ const CKEditorForEmailTemplate = ({
           });
         }}
         onChange={(event, editor) => {
-          const html = editor.getData();       
-          onChange?.(html);           
-      }}
+          const html = editor.getData();
+          onChange?.(html);
+        }}
         config={editorConfig}
         disabled={isdisable}
         {...editorProps}
